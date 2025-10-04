@@ -9,17 +9,14 @@ const projects = [
   { key: 'prj3', name: 'Project Gamma' }
 ];
 
-// LocalStorage key for persisting the admin flag
 const ADMIN_FLAG_KEY = 'youtrack-admin-flag';
 
 const MainMenuPage: React.FC = () => {
-  // Load persisted flag from localStorage
   const [isAdmin, setIsAdmin] = useState(() => {
     const stored = localStorage.getItem(ADMIN_FLAG_KEY);
     return stored === 'true';
   });
 
-  // Persist flag to localStorage whenever it changes
   useEffect(() => {
     localStorage.setItem(ADMIN_FLAG_KEY, isAdmin.toString());
   }, [isAdmin]);
@@ -29,14 +26,15 @@ const MainMenuPage: React.FC = () => {
       <h2>YouTrack Projects</h2>
       <List
         data={projects}
-        render={({ data }) => <span>{data.name}</span>}
+        itemTemplate={item => <span>{item.name}</span>}
       />
       <div style={{ marginTop: 20 }}>
         <Toggle
           checked={isAdmin}
           onChange={event => setIsAdmin(event.target.checked)}
-          label="Admin Mode"
-        />
+        >
+          Admin Mode
+        </Toggle>
       </div>
     </div>
   );
