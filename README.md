@@ -1,46 +1,146 @@
-# Getting Started with Create React App
+---
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# YouTrack App
 
-## Available Scripts
+A React + TypeScript application that demonstrates a YouTrack extension page.  
+Displays a list of available projects and provides an admin toggle with persistent state using localStorage.  
+Built with JetBrains Ring UI components for a clean interface.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Project Overview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Displays a list of available projects (mock data)
+- Admin toggle enables/disables a boolean flag (simulating a test management admin panel)
+- State is persisted in localStorage
+- JetBrains-style UI using Ring UI (`Panel`, `Island`, `Toggle`)
+- Accessible and responsive layout
+- Clean code with TypeScript and modular components
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+---
 
-### `npm test`
+## Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Project list in a readable layout
+- Admin toggle with persistent state
+- Consistent JetBrains UI
+- Semantic HTML and keyboard accessibility
+- Structured for easy extension
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Tech Stack
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- React (hooks, functional components)
+- TypeScript
+- Ring UI
+- Jest & React Testing Library
+- LocalStorage
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## Installation & Development
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```bash
+git clone https://github.com/lamSompa/youtrack-app-jetbrains.git
+cd youtrack-app-jetbrains
+npm install
+npm start
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Open [http://localhost:3000](http://localhost:3000) to view the app.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+---
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Running Tests
 
-## Learn More
+```bash
+npm test
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+To check code coverage:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+npm test -- --coverage
+```
+
+---
+
+## Building for Production
+
+```bash
+npm run build
+```
+
+Creates an optimized build in the `build/` folder.
+
+---
+
+## Project Structure
+
+```
+youtrack-app-jetbrains/
+├── public/
+├── src/
+│   ├── MainMenuPage.tsx
+│   ├── App.tsx
+│   ├── index.tsx
+├── package.json
+├── tsconfig.json
+├── README.md
+└── ...
+```
+
+---
+
+## Clean Code & Best Practices
+
+- Modular components and separation of concerns
+- Type-safe state and props
+- Consistent, descriptive naming
+- Semantic HTML and accessibility
+- Milestone-based commits
+
+---
+
+## Design Decisions
+
+- Ring UI for JetBrains-style interface
+- Plain React list for project display (for compatibility)
+- LocalStorage for persistence
+- Single-page layout for MAIN_MENU_ITEM extension point
+
+---
+
+## Improvements for the Future
+
+- Integrate with the real YouTrack API
+- Add more Ring UI components
+- Expand unit and integration test coverage
+- Enhance accessibility
+- Add error handling and loading states
+- Further UI polish and responsive design
+
+---
+
+## Integration Guidance
+
+- Modularize main page for extension
+- Replace mock data with API calls
+- Ensure UI consistency
+- Abstract persistence logic
+
+---
+
+## License
+
+Demonstration and educational purposes only.  
+Not affiliated with JetBrains or YouTrack.
+
+---
+
+## Author
+
+Made by [lamSompa](https://github.com/lamSompa)
+
+---
