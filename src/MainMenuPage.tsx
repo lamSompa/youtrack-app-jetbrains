@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import List from '@jetbrains/ring-ui/components/list/list';
 import Toggle from '@jetbrains/ring-ui/components/toggle/toggle';
 
 // Mock project list
@@ -24,10 +23,11 @@ const MainMenuPage: React.FC = () => {
   return (
     <div style={{ padding: 20 }}>
       <h2>YouTrack Projects</h2>
-      <List
-        data={projects}
-        itemTemplate={item => <span>{item.name}</span>}
-      />
+      <ul>
+        {projects.map(project => (
+          <li key={project.key}>{project.name}</li>
+        ))}
+      </ul>
       <div style={{ marginTop: 20 }}>
         <Toggle
           checked={isAdmin}
